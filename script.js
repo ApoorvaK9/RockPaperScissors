@@ -28,4 +28,7 @@ function getUserChoice(){
         return "Please enter a valid choice";
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
 console.log(getUserChoice());
