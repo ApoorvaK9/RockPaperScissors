@@ -31,8 +31,6 @@ function getUserChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
-// console.log(playRound(getUserChoice(),getComputerChoice()));
-
 // const humanSelection = getUserChoice();
 // const computerSelection = getComputerChoice();
 // console.log(playRound(humanSelection, computerSelection));
@@ -44,6 +42,7 @@ function playGame() {
         console.log(playRound(getUserChoice(),getComputerChoice()));;
 
     console.log("User Score : " + humanScore + " Computer Score : " + computerScore );
+    winner(humanScore,computerScore);
 
     // function to play single rounds
     function playRound(humanChoice,computerChoice) {
@@ -89,5 +88,15 @@ function playGame() {
     }
 }
 
+// function to display the winner of 5 rounds
+function winner(userPoints,computerPoints) {
+    if (userPoints > computerPoints)
+        console.log(`Congrats! You win! Celebrate!`);
+
+    else if (userPoints < computerPoints)
+        console.log(`You lose!\nBetter luck next time`);
+    else
+        console.log("Its a tie!");
+}
 
 playGame();
