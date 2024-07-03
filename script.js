@@ -31,4 +31,28 @@ function getUserChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
-console.log(getUserChoice());
+// function to play single rounds
+function playRound(humanChoice,computerChoice) {
+    // If user chooses rock
+    if (humanChoice === "Rock"){
+        if (computerChoice === "Scissors"){
+            ++humanScore;
+            return "You win! Rock beats Scissors";
+        }
+        else if (computerChoice === "Paper"){
+            ++computerScore;
+            return "You lose! Paper beats Rock";
+        }
+        else
+            return "Its a tie! Play again";
+    }
+
+
+
+}
+// console.log(playRound(getUserChoice(),getComputerChoice()));
+
+const humanSelection = getUserChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
