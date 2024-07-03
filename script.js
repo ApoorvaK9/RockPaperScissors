@@ -31,52 +31,63 @@ function getUserChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
-// function to play single rounds
-function playRound(humanChoice,computerChoice) {
-    // If user chooses rock
-    if (humanChoice === "Rock"){
-        if (computerChoice === "Scissors"){
-            ++humanScore;
-            return "You win! Rock beats Scissors";
-        }
-        else if (computerChoice === "Paper"){
-            ++computerScore;
-            return "You lose! Paper beats Rock";
-        }
-        else
-            return "Its a tie! Play again";
-    }
-    // If user chooses paper
-    else if (humanChoice === "Paper"){
-        if (computerChoice === "Scissors"){
-            ++computerScore;
-            return "You lose! Scissors beat Paper";
-        }
-        else if (computerChoice === "Rock"){
-            ++humanScore;
-            return "You win! Paper beats Rock";
-        }
-        else
-            return "Its a tie! Play again";
-    }
-    // If user chooses scissors
-    else if (humanChoice === "Scissors"){
-        if (computerChoice === "Paper"){
-            ++humanScore;
-            return "You win! Scissors beat Paper";
-        }
-        else if (computerChoice === "Rock"){
-            ++computerScore;
-            return "You lose! Rock beats Scissors";
-        }
-        else
-            return "Its a tie! Play again";
-    }
-
-}
 // console.log(playRound(getUserChoice(),getComputerChoice()));
 
-const humanSelection = getUserChoice();
-const computerSelection = getComputerChoice();
+// const humanSelection = getUserChoice();
+// const computerSelection = getComputerChoice();
+// console.log(playRound(humanSelection, computerSelection));
 
-console.log(playRound(humanSelection, computerSelection));
+
+// function to play enrire game of 5 rounds
+function playGame() {
+    for( i = 1 ; i < 6 ; i++ )
+        console.log(playRound(getUserChoice(),getComputerChoice()));;
+
+    console.log("User Score : " + humanScore + " Computer Score : " + computerScore );
+
+    // function to play single rounds
+    function playRound(humanChoice,computerChoice) {
+        // If user chooses rock
+        if (humanChoice === "Rock"){
+            if (computerChoice === "Scissors"){
+                ++humanScore;
+                return "You win! Rock beats Scissors";
+            }
+            else if (computerChoice === "Paper"){
+                ++computerScore;
+                return "You lose! Paper beats Rock";
+            }
+            else
+                return "Its a tie! Play again";
+        }
+        // If user chooses paper
+        else if (humanChoice === "Paper"){
+            if (computerChoice === "Scissors"){
+                ++computerScore;
+                return "You lose! Scissors beat Paper";
+            }
+            else if (computerChoice === "Rock"){
+                ++humanScore;
+                return "You win! Paper beats Rock";
+            }
+            else
+                return "Its a tie! Play again";
+        }
+        // If user chooses scissors
+        else if (humanChoice === "Scissors"){
+            if (computerChoice === "Paper"){
+                ++humanScore;
+                return "You win! Scissors beat Paper";
+            }
+            else if (computerChoice === "Rock"){
+                ++computerScore;
+                return "You lose! Rock beats Scissors";
+            }
+            else
+                return "Its a tie! Play again";
+        }
+    }
+}
+
+
+playGame();
