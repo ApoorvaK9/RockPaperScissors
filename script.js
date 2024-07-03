@@ -57,43 +57,57 @@ function playGame() {
         if (humanChoice === "Rock"){
             if (computerChoice === "Scissors"){
                 ++humanScore;
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "You win! Rock beats Scissors";
             }
             else if (computerChoice === "Paper"){
                 ++computerScore;
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "You lose! Paper beats Rock";
             }
-            else
+            else {
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "Its a tie! Play again";
+            }
         }
         // If user chooses paper
         else if (humanChoice === "Paper"){
             if (computerChoice === "Scissors"){
                 ++computerScore;
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "You lose! Scissors beat Paper";
             }
             else if (computerChoice === "Rock"){
                 ++humanScore;
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "You win! Paper beats Rock";
             }
-            else
+            else {
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "Its a tie! Play again";
+            }
         }
         // If user chooses scissors
         else if (humanChoice === "Scissors"){
             if (computerChoice === "Paper"){
                 ++humanScore;
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "You win! Scissors beat Paper";
             }
             else if (computerChoice === "Rock"){
                 ++computerScore;
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "You lose! Rock beats Scissors";
             }
-            else
+            else {
+                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
                 return "Its a tie! Play again";
+            }
         }
-        else
+        else {
+            console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
             return "Please enter a valid choice!";
+        }
     }
 }
 
