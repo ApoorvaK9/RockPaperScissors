@@ -25,7 +25,7 @@ function getUserChoice(){
     else if (userInputLowerCase === "scissors" || userInputLowerCase === "scissor")
         return "Scissors";
     else
-        return "Please enter a valid choice";
+        return "Invalid choice";
 }
 
 let humanScore = 0;
@@ -38,9 +38,16 @@ let computerScore = 0;
 
 // function to play enrire game of 5 rounds
 function playGame() {
-    for( i = 1 ; i < 6 ; i++ )
-        console.log(playRound(getUserChoice(),getComputerChoice()));;
+    for( i = 1 ; i < 6 ; i++ ) {
+        let humanSelection = getUserChoice();
+        let computerSelection = getComputerChoice();
+        console.log(playRound(humanSelection, computerSelection));
 
+        // console.log(playRound(getUserChoice(),getComputerChoice()));
+        if (humanSelection === "Invalid choice"){
+            --i;
+        }
+    }
     console.log("User Score : " + humanScore + " Computer Score : " + computerScore );
     winner(humanScore,computerScore);
 
@@ -85,6 +92,8 @@ function playGame() {
             else
                 return "Its a tie! Play again";
         }
+        else
+            return "Please enter a valid choice!";
     }
 }
 
