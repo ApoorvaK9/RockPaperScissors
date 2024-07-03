@@ -46,8 +46,32 @@ function playRound(humanChoice,computerChoice) {
         else
             return "Its a tie! Play again";
     }
-
-
+    // If user chooses paper
+    else if (humanChoice === "Paper"){
+        if (computerChoice === "Scissors"){
+            ++computerScore;
+            return "You lose! Scissors beat Paper";
+        }
+        else if (computerChoice === "Rock"){
+            ++humanScore;
+            return "You win! Paper beats Rock";
+        }
+        else
+            return "Its a tie! Play again";
+    }
+    // If user chooses scissors
+    else if (humanChoice === "Scissors"){
+        if (computerChoice === "Paper"){
+            ++humanScore;
+            return "You win! Scissors beat Paper";
+        }
+        else if (computerChoice === "Rock"){
+            ++computerScore;
+            return "You lose! Rock beats Scissors";
+        }
+        else
+            return "Its a tie! Play again";
+    }
 
 }
 // console.log(playRound(getUserChoice(),getComputerChoice()));
