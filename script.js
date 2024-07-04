@@ -30,6 +30,10 @@ function getUserChoice(){
 
 let userScore = 0;
 let computerScore = 0;
+let winner = (userPoints,computerPoints) => {
+    (userPoints > computerPoints) ? console.log(`Congrats! You win! Celebrate!`)
+    :(userPoints < computerPoints) ? console.log(`You lose!\nBetter luck next time`)
+    :console.log("Its a tie!")};
 
 // function to play enrire game of 5 rounds
 function playGame() {
@@ -44,6 +48,7 @@ function playGame() {
         }
     }
     console.log("User Score : " + userScore + " Computer Score : " + computerScore );
+
     winner(userScore,computerScore);
 
     // function to play single rounds
@@ -104,17 +109,6 @@ function playGame() {
             return "Please enter a valid choice!";
         }
     }
-}
-
-// function to display the winner of 5 rounds
-function winner(userPoints,computerPoints) {
-    if (userPoints > computerPoints)
-        console.log(`Congrats! You win! Celebrate!`);
-
-    else if (userPoints < computerPoints)
-        console.log(`You lose!\nBetter luck next time`);
-    else
-        console.log("Its a tie!");
 }
 
 playGame();
