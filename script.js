@@ -1,3 +1,13 @@
+let userScore = 0;
+let computerScore = 0;
+let winner = (userPoints,computerPoints) => {
+    (userPoints > computerPoints) ? console.log(`Congrats! You win! Celebrate!`)
+    :(userPoints < computerPoints) ? console.log(`You lose!\nBetter luck next time`)
+    :console.log("Its a tie!")};
+    
+playGame();
+
+
 // function creates a random number between 1,2,3
 function randomNumber() {
     return (Math.floor( 1 + ( Math.random() * 3 )));
@@ -27,13 +37,6 @@ function getUserChoice(){
     else
         return "Invalid choice";
 }
-
-let userScore = 0;
-let computerScore = 0;
-let winner = (userPoints,computerPoints) => {
-    (userPoints > computerPoints) ? console.log(`Congrats! You win! Celebrate!`)
-    :(userPoints < computerPoints) ? console.log(`You lose!\nBetter luck next time`)
-    :console.log("Its a tie!")};
 
 // function to play enrire game of 5 rounds
 function playGame() {
@@ -114,5 +117,3 @@ function playGame() {
 function displayPlayersChoice(userChoice,computerChoice) {
     console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
 }
-
-playGame();
