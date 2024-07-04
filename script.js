@@ -28,84 +28,84 @@ function getUserChoice(){
         return "Invalid choice";
 }
 
-let humanScore = 0;
+let userScore = 0;
 let computerScore = 0;
 
-// const humanSelection = getUserChoice();
+// const userSelection = getUserChoice();
 // const computerSelection = getComputerChoice();
-// console.log(playRound(humanSelection, computerSelection));
+// console.log(playRound(userSelection, computerSelection));
 
 
 // function to play enrire game of 5 rounds
 function playGame() {
     for( i = 1 ; i < 6 ; i++ ) {
-        let humanSelection = getUserChoice();
+        let userSelection = getUserChoice();
         let computerSelection = getComputerChoice();
-        console.log(playRound(humanSelection, computerSelection));
+        console.log(playRound(userSelection, computerSelection));
 
         // console.log(playRound(getUserChoice(),getComputerChoice()));
-        if (humanSelection === "Invalid choice"){
+        if (userSelection === "Invalid choice"){
             --i;
         }
     }
-    console.log("User Score : " + humanScore + " Computer Score : " + computerScore );
-    winner(humanScore,computerScore);
+    console.log("User Score : " + userScore + " Computer Score : " + computerScore );
+    winner(userScore,computerScore);
 
     // function to play single rounds
-    function playRound(humanChoice,computerChoice) {
+    function playRound(userChoice,computerChoice) {
         // If user chooses rock
-        if (humanChoice === "Rock"){
+        if (userChoice === "Rock"){
             if (computerChoice === "Scissors"){
-                ++humanScore;
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                ++userScore;
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "You win! Rock beats Scissors";
             }
             else if (computerChoice === "Paper"){
                 ++computerScore;
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "You lose! Paper beats Rock";
             }
             else {
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "Its a tie! Play again";
             }
         }
         // If user chooses paper
-        else if (humanChoice === "Paper"){
+        else if (userChoice === "Paper"){
             if (computerChoice === "Scissors"){
                 ++computerScore;
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "You lose! Scissors beat Paper";
             }
             else if (computerChoice === "Rock"){
-                ++humanScore;
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                ++userScore;
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "You win! Paper beats Rock";
             }
             else {
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "Its a tie! Play again";
             }
         }
         // If user chooses scissors
-        else if (humanChoice === "Scissors"){
+        else if (userChoice === "Scissors"){
             if (computerChoice === "Paper"){
-                ++humanScore;
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                ++userScore;
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "You win! Scissors beat Paper";
             }
             else if (computerChoice === "Rock"){
                 ++computerScore;
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "You lose! Rock beats Scissors";
             }
             else {
-                console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+                console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
                 return "Its a tie! Play again";
             }
         }
         else {
-            console.log("User choice : " + humanChoice + "    Computer choice : " + computerChoice);
+            console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
             return "Please enter a valid choice!";
         }
     }
