@@ -31,11 +31,6 @@ function getUserChoice(){
 let userScore = 0;
 let computerScore = 0;
 
-// const userSelection = getUserChoice();
-// const computerSelection = getComputerChoice();
-// console.log(playRound(userSelection, computerSelection));
-
-
 // function to play enrire game of 5 rounds
 function playGame() {
     for( i = 1 ; i < 6 ; i++ ) {
