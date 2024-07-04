@@ -38,7 +38,7 @@ function getUserChoice(){
         return "Invalid choice";
 }
 
-// function to play enrire game of 5 rounds
+// function to play entire game of 5 rounds
 function playGame() {
     for( i = 1 ; i < 6 ; i++ ) {
         let userSelection = getUserChoice();
