@@ -1,12 +1,10 @@
 let userScore = 0;
 let computerScore = 0;
 let winner = (userPoints,computerPoints) => {
-    (userPoints > computerPoints) ? console.log(`Congrats! You win! Celebrate!`)
-    :(userPoints < computerPoints) ? console.log(`You lose!\nBetter luck next time`)
-    :console.log("Its a tie!")};
+    (userPoints > computerPoints) ? displayResult(`Congrats! You win! Celebrate!`)
+    :(userPoints < computerPoints) ? displayResult(`You lose!\nBetter luck next time`)
+    :displayResult("Its a tie!")};
     
-playGame();
-
 
 // function creates a random number between 1,2,3
 function randomNumber() {
@@ -25,33 +23,36 @@ function getComputerChoice() {
 }
 
 // function to get user input
-function getUserChoice(){
-    let userInput = prompt(`Welcome to Rock,Paper,Scissors game! \nPlease write your choice below`);
-    let userInputLowerCase = userInput.toLowerCase();
-    if (userInputLowerCase === "rock" )
-        return "Rock";
-    else if (userInputLowerCase === "paper" )
-        return "Paper";
-    else if (userInputLowerCase === "scissors" || userInputLowerCase === "scissor")
-        return "Scissors";
-    else
-        return "Invalid choice";
-}
+// function getUserChoice(){
+//     let userInput = prompt(`Welcome to Rock,Paper,Scissors game! \nPlease write your choice below`);
+//     let userInputLowerCase = userInput.toLowerCase();
+//     if (userInputLowerCase === "rock" )
+//         return "Rock";
+//     else if (userInputLowerCase === "paper" )
+//         return "Paper";
+//     else if (userInputLowerCase === "scissors" || userInputLowerCase === "scissor")
+//         return "Scissors";
+//     else
+//         return "Invalid choice";
+// }
 
 // function to play entire game of 5 rounds
-function playGame() {
-    for( i = 1 ; i < 6 ; i++ ) {
-        let userSelection = getUserChoice();
+function playGame(userSelection) {
+    // for( i = 1 ; i < 6 ; i++ ) {
+    //     // let userSelection = getUserChoice();
+    //     let computerSelection = getComputerChoice();
+    //     console.log(playRound(userSelection, computerSelection));
+
+    //     // console.log(playRound(getUserChoice(),getComputerChoice()));
+    //     if (userSelection === "Invalid choice"){
+    //         --i;
+    //     }
+    // }
+
         let computerSelection = getComputerChoice();
-        console.log(playRound(userSelection, computerSelection));
+        displayResult(playRound(userSelection, computerSelection));
 
-        // console.log(playRound(getUserChoice(),getComputerChoice()));
-        if (userSelection === "Invalid choice"){
-            --i;
-        }
-    }
-    console.log("User Score : " + userScore + " Computer Score : " + computerScore );
-
+    displayResult("User Score : " + userScore + " Computer Score : " + computerScore );
     winner(userScore,computerScore);
 
     // function to play single rounds
@@ -114,6 +115,44 @@ function playGame() {
     }
 }
 
+//function displays players choice
 function displayPlayersChoice(userChoice,computerChoice) {
-    console.log("User choice : " + userChoice + "    Computer choice : " + computerChoice);
+    result.textContent = "";
+    displayResult("User choice : " + userChoice + "    Computer choice : " + computerChoice);
+}
+
+
+// UI 
+const choice = document.querySelector("#choice");
+const result = document.querySelector("#result");
+let userSelection = '';
+
+choice.addEventListener("click",(e)=> {
+        let target = e.target;
+        switch (target.id) {
+            case 'rock':
+                userSelection = "Rock";
+                playGame(userSelection);
+                break;
+
+            case 'paper':
+                userSelection = "Paper";
+                playGame(userSelection);
+                break;
+
+            case 'scissors':
+                userSelection = "Scissors";
+                playGame(userSelection);
+                break;
+
+            default:
+                break;
+        }
+    });
+
+//function dislays result    
+function displayResult(msg){
+    const paragraph = document.createElement("p");
+    paragraph.textContent = msg;
+    result.appendChild(paragraph);
 }
