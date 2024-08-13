@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color:aqua;
+}
+
+.labels, #choice {
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+    font-family: "Times New Roman", Times, serif;
+    }
+
+ .topHalf, #computer, #user {
+    display: flex;
+    margin: 30px;
+    justify-content: space-between;
+}
+
+#computer, #user {
+    flex-direction: column;
+}
+
+.computerScore, .userScore {
+  padding: 20px;
+  border: solid;
+  margin: 50px;
+  font-size: 30px;
+}
+
+#paperRock,#rockScissors,#scissorsPaper,#winner {
+    display: none;
+}
+
+.visible {
+    display: block;
+}

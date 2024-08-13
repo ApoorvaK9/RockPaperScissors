@@ -1,6 +1,7 @@
 let userScore = 0;
 let computerScore = 0;
 
+
 // function creates a random number between 1,2,3
 function randomNumber() {
     return (Math.floor( 1 + ( Math.random() * 3 )));
@@ -19,21 +20,32 @@ function getComputerChoice() {
 
 // function to play entire game of 5 rounds
 function playGame(userSelection) {
+    let displayUserScore = document.querySelector(".userScore");
+    let displayComputerScore = document.querySelector(".computerScore");
+    let paperRock = 0;
+    let rockScissor = 0;
+    let scissorsPaper = 0;
     let computerSelection = getComputerChoice();
+
     displayResult(playRound(userSelection, computerSelection));
-    displayResult("User Score : " + userScore + " Computer Score : " + computerScore );
-    // function to play single rounds
+    displayWinner();
+    displayUserScore.textContent = userScore;
+    displayComputerScore.textContent = computerScore;
+
+        // function to play single rounds
     function playRound(userChoice,computerChoice) {
         // If user chooses rock
         if (userChoice === "Rock"){
                 if (computerChoice === "Scissors"){
                     ++userScore;
                     displayPlayersChoice(userChoice,computerChoice);
+                    rockScissor = 1;
                     return "You win! Rock beats Scissors";
                 }
                 else if (computerChoice === "Paper"){
                     ++computerScore;
                     displayPlayersChoice(userChoice,computerChoice);
+                    paperRock = 1;
                     return "You lose! Paper beats Rock";
                 }
                 else {
@@ -46,11 +58,13 @@ function playGame(userSelection) {
                 if (computerChoice === "Scissors"){
                     ++computerScore;
                     displayPlayersChoice(userChoice,computerChoice);
+                    scissorsPaper = 1;
                     return "You lose! Scissors beat Paper";
                 }
                 else if (computerChoice === "Rock"){
                     ++userScore;
                     displayPlayersChoice(userChoice,computerChoice);
+                    paperRock = 1;
                     return "You win! Paper beats Rock";
                 }
                 else {
@@ -63,11 +77,13 @@ function playGame(userSelection) {
                 if (computerChoice === "Paper"){
                     ++userScore;
                     displayPlayersChoice(userChoice,computerChoice);
+                    scissorsPaper = 1;
                     return "You win! Scissors beat Paper";
                 }
                 else if (computerChoice === "Rock"){
                     ++computerScore;
                     displayPlayersChoice(userChoice,computerChoice);
+                    rockScissor = 1;
                     return "You lose! Rock beats Scissors";
                 }
                 else {
@@ -76,6 +92,24 @@ function playGame(userSelection) {
                 }
             }
     }
+
+    function displayWinner(){
+        let imgPaperRock = document.getElementById("paperRock");
+        let imgrockScissors = document.getElementById("rockScissors");
+        let imgscissorsPaper = document.getElementById("scissorsPaper");
+        imgPaperRock.style.display = "none";
+        imgrockScissors.style.display = "none";
+        imgscissorsPaper.style.display = "none";
+        
+        if(paperRock === 1)
+            imgPaperRock.style.display = "block";
+        else if(rockScissor === 1)
+            imgrockScissors.style.display = "block";
+        else if (scissorsPaper === 1)
+            imgscissorsPaper.style.display = "block";
+    }
+
+
     if (userScore === 5 || computerScore === 5)
         {
             const userHighScore = userScore;
@@ -84,19 +118,24 @@ function playGame(userSelection) {
             computerScore = 0;
             winner(userHighScore,computerHighScore);
         }
+    
 }
 
 // function to display final winner
 function winner(userHighScore,computerHighScore) {
     (userHighScore > computerHighScore) ? displayResult(`Congrats! You win! Celebrate!`)
-    :(userHighScore < computerHighScore) ? displayResult(`You lose!\nBetter luck next time`)
-    :displayResult("Its a tie!")
+    :displayResult(`You lose!\nBetter luck next time`)
 }
 
 //function displays players choice
 function displayPlayersChoice(userChoice,computerChoice) {
+    let userSelectedOption = document.querySelector(".userSelectedOption");
+    let computerSelectedOption = document.querySelector(".computerSelectedOption");
+    
+    userSelectedOption.textContent = userChoice;
+    computerSelectedOption.textContent = computerChoice;
+    
     result.textContent = "";
-    displayResult("User choice : " + userChoice + "    Computer choice : " + computerChoice);
 }
 
 
@@ -135,3 +174,21 @@ function displayResult(msg){
     paragraph.textContent = msg;
     result.appendChild(paragraph);
 }
+
+
+//function displays winner of the match and then round
+// function displayWinner() {
+//     let imgPaperRock = document.querySelector("paperRock");
+//     let imgrockScissors = document.querySelector("rockScissors");
+//     let imgscissorsPaper = document.querySelector("scissorsPaper");
+//     imgPaperRock.classList.remove("visible");
+//     imgrockScissors.classList.remove("visible");
+//     imgscissorsPaper.classList.remove("visible");
+    
+//     if(paperRock === 1)
+//         imgPaperRock.classList.add("visible");
+//     else if(rockScissor === 1)
+//         imgrockScissors.classList.add("visible");
+//     else if (scissorsPaper === 1)
+//         imgscissorsPaper.classList.add("visible");
+// }
