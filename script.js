@@ -1,6 +1,11 @@
 let userScore = 0;
 let computerScore = 0;
 
+let displayUserScore = document.querySelector(".userScore");
+let displayComputerScore = document.querySelector(".computerScore");
+displayUserScore.textContent = userScore;
+displayComputerScore.textContent = computerScore;
+
 
 // function creates a random number between 1,2,3
 function randomNumber() {
@@ -124,7 +129,7 @@ function playGame(userSelection) {
 // function to display final winner
 function winner(userHighScore,computerHighScore) {
     (userHighScore > computerHighScore) ? displayResult(`Congrats! You win! Celebrate!`)
-    :displayResult(`You lose!\nBetter luck next time`)
+    :displayResult(`You lose!\nPlay again!`)
 }
 
 //function displays players choice
@@ -174,21 +179,3 @@ function displayResult(msg){
     paragraph.textContent = msg;
     result.appendChild(paragraph);
 }
-
-
-//function displays winner of the match and then round
-// function displayWinner() {
-//     let imgPaperRock = document.querySelector("paperRock");
-//     let imgrockScissors = document.querySelector("rockScissors");
-//     let imgscissorsPaper = document.querySelector("scissorsPaper");
-//     imgPaperRock.classList.remove("visible");
-//     imgrockScissors.classList.remove("visible");
-//     imgscissorsPaper.classList.remove("visible");
-    
-//     if(paperRock === 1)
-//         imgPaperRock.classList.add("visible");
-//     else if(rockScissor === 1)
-//         imgrockScissors.classList.add("visible");
-//     else if (scissorsPaper === 1)
-//         imgscissorsPaper.classList.add("visible");
-// }

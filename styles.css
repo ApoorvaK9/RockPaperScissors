@@ -2,36 +2,113 @@ body {
     display: flex;
     flex-direction: column;
     background-color:aqua;
+    align-items: center;
+   /* gap: 40px; */
+    padding: 30px;
+    background-image: linear-gradient(to right,#ffe189, #7086ff ,#e5c1c1, #8bd7fa);
 }
 
-.labels, #choice {
+#choice {
     display: flex;
     justify-content: space-around;
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
-    }
+    gap: 50px;
+    margin-top: 50px;
 
- .topHalf, #computer, #user {
+}
+
+.topHalf, #computer, #user {
     display: flex;
-    margin: 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 0px 50px;
+    padding: 0px 50px;
 }
 
 #computer, #user {
     flex-direction: column;
+    align-items: center;
+    /* gap: 10px; */
 }
 
 .computerScore, .userScore {
-  padding: 20px;
-  border: solid;
-  margin: 50px;
-  font-size: 30px;
+    padding: 20px;
+    border: solid #6a6464;
+    margin: 0px 50px;
+    font-size: 50px;
+    background-color: #6a6464;
+    font-weight: bold;
+    color: white;
+    height: 104px;
+    width: 71px;
+    box-sizing: border-box;
 }
+
 
 #paperRock,#rockScissors,#scissorsPaper,#winner {
     display: none;
 }
 
-.visible {
-    display: block;
+#images > img{
+    height: 300px;
+    width: 500px;
+    border: groove #b8b8b6;
+}
+
+#result p{
+    font-size: 40px;
+    /* min-height: 127px; */
+    /* max-height: 200px; */
+    margin: 0px;
+}
+
+#result {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    padding: 0px;
+    border: solid 2px rgb(155, 152,163) ;
+    cursor: pointer;
+    height: 204px;
+}
+
+button:hover {
+    border: black solid 2px;
+}
+
+label {
+    font-size: 50px;
+    border: dashed;
+    padding: 10px;
+}
+
+#images {
+    margin-top: 150px;
+    height: 300px;
+    width: 500px;
+}
+
+.topHalf {
+    height: 450px;
+}
+
+p.score , p.displayChoice{
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+.userSelectedOption, .computerSelectedOption {
+    font-size: 30px;
+    background-color: #6a6464;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    box-sizing: content-box;
+    min-height: 34px;
+    width: 101px;
+    text-align: center;
 }

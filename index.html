@@ -8,32 +8,36 @@
     <script src="script.js"defer></script>
 </head>
 <body>
-    <div class = "labels">
+    <!-- <div class = "labels">
         <label>Computer</label>
-        <label>User</label>
+        <label>User</label> -->
     </div>
     <div class = "topHalf">
         <div id = "computer">
+            <label>Computer</label>
+            <p class="displayChoice">Computers choice</p>
             <div class = "computerSelectedOption"></div>
+            <p class="score">Score</p>
             <div class = "computerScore"></div>
         </div>
-        <div>
-            <img id = "paperRock" src="./imgs/paper_rock.jpg" height="auto" width = 400px>
-            <img id = "rockScissors" src="./imgs/rockScissor.jpg" height="auto" width = 400px>
-            <img id = "scissorsPaper" src="./imgs/Scissors_paper.jpg" height="auto" width = 400px>
-            <p id = winner></p>
+        <div id =images>
+            <img id = "paperRock" src="./imgs/paper_rock.jpg" alt="Paper beats rock" height=400px width = 500px>
+            <img id = "rockScissors" src="./imgs/rockScissor.jpg" alt ="Rock beats scissors" height=400px width = 500px>
+            <img id = "scissorsPaper" src="./imgs/Scissors_paper.jpg" alt ="Scissors beat paper" height=400px width = 500px>
         </div>
         <div id = "user">
+            <label>User</label>
+            <p class="displayChoice">You choice</p>
             <div class = "userSelectedOption"></div>
+            <p class="score">Score</p>
             <div class = "userScore"></div>
         </div>
     </div>
-    
-    <div id = "choice">
-        <button><img id = "rock" src="./imgs/rock.jpg"></button>
-        <button><img id = "paper" src="./imgs/paper.jpg"></button>
-        <button><img id = "scissors" src="./imgs/scissors.jpg"></button>
-    </div>
     <div id = "result"></div>
+    <div id = "choice">
+        <button type="button"><img id = "rock" src="./imgs/rock.jpg" alt="Rock" height="200px" width="150px"></button>
+        <button><img id = "paper" src="./imgs/paper.jpg" alt="Paper" height="200px" width="150px"></button>
+        <button><img id = "scissors" src="./imgs/scissors.jpg" alt="Scissors" height="200px" width="150px"></button>
+    </div>
 </body>
 </html>
