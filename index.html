@@ -8,36 +8,48 @@
     <script src="script.js"defer></script>
 </head>
 <body>
-    <!-- <div class = "labels">
-        <label>Computer</label>
-        <label>User</label> -->
-    </div>
-    <div class = "topHalf">
-        <div id = "computer">
-            <label>Computer</label>
-            <p class="displayChoice">Computers choice</p>
-            <div class = "computerSelectedOption"></div>
-            <p class="score">Score</p>
-            <div class = "computerScore"></div>
-        </div>
-        <div id =images>
-            <img id = "paperRock" src="./imgs/paper_rock.jpg" alt="Paper beats rock" height=400px width = 500px>
-            <img id = "rockScissors" src="./imgs/rockScissor.jpg" alt ="Rock beats scissors" height=400px width = 500px>
-            <img id = "scissorsPaper" src="./imgs/Scissors_paper.jpg" alt ="Scissors beat paper" height=400px width = 500px>
-        </div>
-        <div id = "user">
-            <label>User</label>
-            <p class="displayChoice">You choice</p>
-            <div class = "userSelectedOption"></div>
-            <p class="score">Score</p>
-            <div class = "userScore"></div>
+    <div id = "popup">
+        <div id = "popupContent">
+            <span id = "closePopup">&#10060;</span>
+            <p style="font-size: 30px;margin: 30px 0px 50px;">Welcome to Rock-Paper-Scissors!</p>
+            <p class="gameInfo">How to play?<br><br>
+            You can start the game by selecting "rock", "scissors" or "paper" 
+            and see if you can beat the computer.<br><br>
+            Will you win? The chance is random!<br>              
+            There are 5 rounds. The game ends when somebody gets 5 wins.</p>
         </div>
     </div>
-    <div id = "result"></div>
-    <div id = "choice">
-        <button type="button"><img id = "rock" src="./imgs/rock.jpg" alt="Rock" height="200px" width="150px"></button>
-        <button><img id = "paper" src="./imgs/paper.jpg" alt="Paper" height="200px" width="150px"></button>
-        <button><img id = "scissors" src="./imgs/scissors.jpg" alt="Scissors" height="200px" width="150px"></button>
-    </div>
+    <div class="mainPage">
+        <h1>Rock-Paper-Scissors</h1>
+        <div class = "topHalf">
+            <div id = "computer">
+                <label>Computer</label>
+                <p class="displayChoice">Computers choice</p>
+                <div class = "computerSelectedOption"></div>
+                <p class="score">Score</p>
+                <div class = "computerScore"></div>
+            </div>
+            <div id =images>
+                <img id = "paperRock" src="./imgs/paper_rock.jpg" alt="Paper beats rock" height=400px width = 500px>
+                <img id = "rockScissors" src="./imgs/rockScissor.jpg" alt ="Rock beats scissors" height=400px width = 500px>
+                <img id = "scissorsPaper" src="./imgs/Scissors_paper.jpg" alt ="Scissors beat paper" height=400px width = 500px>
+            </div>
+            <div id = "user">
+                <label>User</label>
+                <p class="displayChoice">You choice</p>
+                <div class = "userSelectedOption"></div>
+                <p class="score">Score</p>
+                <div class = "userScore"></div>
+            </div>
+        </div>
+        <!-- <div id = "result"></div> -->
+        <div id = "result"></div>
+        <div id = "finalWinner"></div>
+        <div id = "choice">
+            <button type="button"><img id = "rock" src="./imgs/rock.jpg" alt="Rock" height="200px" width="150px"></button>
+            <button><img id = "paper" src="./imgs/paper.jpg" alt="Paper" height="200px" width="150px"></button>
+            <button><img id = "scissors" src="./imgs/scissors.jpg" alt="Scissors" height="200px" width="150px"></button>
+        </div>
+    </div>    
 </body>
 </html>

@@ -1,34 +1,36 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color:aqua;
+    background-color: black;
     align-items: center;
-   /* gap: 40px; */
-    padding: 30px;
-    background-image: linear-gradient(to right,#ffe189, #7086ff ,#e5c1c1, #8bd7fa);
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+.mainPage {
+    background-image: linear-gradient(to right, #ffe189, #7086ff, #e5c1c1, #8bd7fa);
 }
 
 #choice {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
-    gap: 50px;
+    gap: 20px;
     margin-top: 50px;
-
 }
 
 .topHalf, #computer, #user {
     display: flex;
     justify-content: flex-start;
-    margin: 0px 50px;
+    margin: 0px;
     padding: 0px 50px;
 }
 
 #computer, #user {
     flex-direction: column;
     align-items: center;
-    /* gap: 10px; */
+    min-width: 290px;
 }
 
 .computerScore, .userScore {
@@ -44,7 +46,6 @@ body {
     box-sizing: border-box;
 }
 
-
 #paperRock,#rockScissors,#scissorsPaper,#winner {
     display: none;
 }
@@ -57,13 +58,21 @@ body {
 
 #result p{
     font-size: 40px;
-    /* min-height: 127px; */
-    /* max-height: 200px; */
     margin: 0px;
 }
 
-#result {
-    min-height: 100px;
+#finalWinner{
+    font-size: 43px;
+    color: blue;
+    margin: 0px;
+}
+
+.gameInfo {
+    font-size: 25px;
+}
+
+#result, #finalWinner {
+    min-height: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,19 +80,24 @@ body {
 
 button {
     padding: 0px;
-    border: solid 2px rgb(155, 152,163) ;
+    border: outset 4px rgb(185 185 188);
     cursor: pointer;
-    height: 204px;
+    height: 208px;
+    margin-bottom: 40px;
 }
 
 button:hover {
     border: black solid 2px;
+    height: 208px;
+    width: 158px;
+    background-color: rgb(155 152 163);
 }
 
 label {
     font-size: 50px;
     border: dashed;
     padding: 10px;
+    margin-top: 40px;
 }
 
 #images {
@@ -111,4 +125,38 @@ p.score , p.displayChoice{
     min-height: 34px;
     width: 101px;
     text-align: center;
+}
+
+h1 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+    border-bottom: dashed;
+}
+
+/* styles for popup */
+#popup {
+    color: white;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#popupContent {
+    text-align: center;
+    background-color: black;
+    margin: 10% auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 25px;
+}
+
+#closePopup {
+    float : right;
+    font-weight: bolder;
+    padding: 2px;
+    cursor: pointer;
 }

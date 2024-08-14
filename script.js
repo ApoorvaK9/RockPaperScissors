@@ -128,8 +128,11 @@ function playGame(userSelection) {
 
 // function to display final winner
 function winner(userHighScore,computerHighScore) {
-    (userHighScore > computerHighScore) ? displayResult(`Congrats! You win! Celebrate!`)
-    :displayResult(`You lose!\nPlay again!`)
+    let finalWinner = document.querySelector("#finalWinner");
+    if (userHighScore > computerHighScore) 
+        finalWinner.textContent ="Congrats! You win! Celebrate!";
+    else
+        finalWinner.textContent = "You lose! Play again!";
 }
 
 //function displays players choice
@@ -141,6 +144,7 @@ function displayPlayersChoice(userChoice,computerChoice) {
     computerSelectedOption.textContent = computerChoice;
     
     result.textContent = "";
+    finalWinner.textContent = "";
 }
 
 
@@ -179,3 +183,22 @@ function displayResult(msg){
     paragraph.textContent = msg;
     result.appendChild(paragraph);
 }
+
+
+//displays popup when browser is refreshed
+let popup = document.getElementById("popup");
+document.addEventListener('DOMContentLoaded',() => {
+    popup.style.display = "block";
+});
+
+    //closes popup when cross sign is pressed
+let closePopup = document.getElementById("closePopup");
+closePopup.addEventListener('click',() =>{
+    popup.style.display = "none";
+        });
+
+//popup closes if clicked outside popupContent
+document.addEventListener('click', (e) =>{
+    if (e.target === popup)
+        popup.style.display = "none";
+});
